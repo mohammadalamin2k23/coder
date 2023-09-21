@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODER</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/login.css"> <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon link
+  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+          
+      <a href="#" class="logo"></a><div class="text1">CODER</div>
+      </h1>
+
+      <button class="menu-toggle-btn icon-box" data-menu-toggle-btn aria-label="Toggle Menu">
+        <span class="material-symbols-rounded  icon">menu</span>
+      </button>
+
+      <nav class="navbar">
+        <div class="container">
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="index.html" class="navbar-link active icon-box">
+                <span class="material-symbols-rounded  icon">grid_view</span>
+
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="recent-project.html" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">add</span>
+
+                <span>Projects</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="task.html" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">list</span>
+
+                <span>Tasks</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="dashboard.html" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">bookmark</span>
+
+                <span>Bookmark</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="dashboard.html" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">dashboard</span>
+
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="user-action-list">
+
+            <li>
+              <a href="login.html"
+          class="demo icon-box">
+                <span class="material-symbols-rounded  icon">login</span> 
+                
+                
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-profile">
+
+                <figure class="profile-avatar">
+                  
+                </figure>
+
+                
+                  
+
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <main>
+  <section class="home">
+      
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"><body>  <div class="dropbox-content flex max-w-xl mx-auto"> <div class="dropbox-content__img flex items-center justify-center w-half"> <img src="https://mazipan.github.io/login-page-css/undraw-login.1df4c833.svg" alt="Login Image"> </div> <div class="dropbox-content__form w-half"> <form class="flex flex-col"> <div class="flex form__header justify-between"> <h5>Sign In</h5> <p>or <a href="">create an account</a></p> </div> <div class="flex flex-col form__btn"> <button class="form__btn-social form__btn-social--google"> <span class="flex form__border items-center justify-center"><img src="https://mazipan.github.io/login-page-css/google.ddf4da71.svg" style="height:1rem;width:1rem" alt=""></span> <span class="form__caption">  Sign in with Google</span> </button> <button class="form__btn-social form__btn-social--apple"> <span class="flex form__border items-center justify-center"> <img src="https://mazipan.github.io/login-page-css/apple.1efa1143.svg" style="height:1rem;width:1rem" alt=""> </span> <span class="form__caption">Sign in with Apple</span> </button> </div> <div class="flex form__liners items-center justify-center"> <span class="form__line"></span> <span class="form__line--caption">or</span> <span class="form__line"></span> </div> <div class="flex flex-col form__input-group"> <input type="email" class="form__input form__input--email" placeholder="Email"> <input type="password" class="form__input form__input--password" placeholder="Password"> </div> <div class="flex form__submit items-center justify-between"> <div class="flex"> <input type="checkbox" class="form__checklist" id="remember"> <label for="remember" class="form__label">Remember me</label> </div> <button class="form__btn-submit">Sign in</button> </div> <a href="#" class="form__forgot">Forgot Password</a> <p class="form__mobile">( or <a href="#"> create an account </a> )</p> <p class="form__notes"> This page is protected by reCAPTCHA, and subject to the Google <a href="">Privacy Policy</a> and <a href="#">Terms of service</a>. </p> </form> </div> </div> 
+      
+    
+      <!-- all -->
+      
+
+<script>document.querySelector(".jsFilter").addEventListener("click", function () {
+  document.querySelector(".filter-menu").classList.toggle("active");
+});
+
+document.querySelector(".grid").addEventListener("click", function () {
+  document.querySelector(".list").classList.remove("active");
+  document.querySelector(".grid").classList.add("active");
+  document.querySelector(".products-area-wrapper").classList.add("gridView");
+  document
+    .querySelector(".products-area-wrapper")
+    .classList.remove("tableView");
+});
+
+document.querySelector(".list").addEventListener("click", function () {
+  document.querySelector(".list").classList.add("active");
+  document.querySelector(".grid").classList.remove("active");
+  document.querySelector(".products-area-wrapper").classList.remove("gridView");
+  document.querySelector(".products-area-wrapper").classList.add("tableView");
+});
+
+var modeSwitch = document.querySelector('.mode-switch');
+modeSwitch.addEventListener('click', function () {                      document.documentElement.classList.toggle('light');
+ modeSwitch.classList.toggle('active');
+});
+</script>
+
+      <section>
+          
+    <div class="card revenue-card">
+
+          <button class="card-menu-btn icon-box" aria-label="More" data-menu-btn>
+            <span class="material-symbols-rounded  icon">more_horiz</span>
+          </button>
+
+          <ul class="ctx-menu">
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">preview</span>
+
+                <span class="ctx-menu-text">Preview</span>
+              </button>
+            </li>
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">add</span>
+
+                <span class="ctx-menu-text">Insert</span>
+              </button>
+            </li>
+
+          </ul>
+
+          <p class="card-title">Revenue</p>
+
+          <data class="card-price" value="2100">$2,100</data>
+
+          <p class="card-text">Last Week</p>
+
+          <div class="divider card-divider"></div>
+
+          <ul class="revenue-list">
+
+            <li class="revenue-item icon-box">
+
+              <span class="material-symbols-rounded  icon  green">trending_up</span>
+
+              <div>
+                <data class="revenue-item-data" value="15">15%</data>
+
+                <p class="revenue-item-text">Prev Week</p>
+              </div>
+
+            </li>
+
+            <li class="revenue-item icon-box">
+
+              <span class="material-symbols-rounded  icon  red">trending_down</span>
+
+              <div>
+                <data class="revenue-item-data" value="10">10%</data>
+
+                <p class="revenue-item-text">Prev Month</p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+        
+       
+            
+        
+
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <ul class="footer-list">
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">About</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">Privacy</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">Terms</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">Developers</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">Support</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">Careers</a>
+        </li>
+
+      </ul>
+
+  <p class="copyright">
+        &copy; 2023 <a href="#" class="copyright-link">CODER</a>. All Rights Reserved
+      </p>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
