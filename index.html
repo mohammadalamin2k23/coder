@@ -17,7 +17,7 @@
   -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/stylu.css"> <!-- 
+<!-- 
     - google font link
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,13 +137,13 @@
     
       <!-- all -->
       <div class="app-content-actions">
-      <input class="search-bar" placeholder="Search..." type="text">
+      <input class="search-bar" placeholder="Search..."id="searchInput" type="text">
       <div class="app-content-actions-wrapper">
         <div class="filter-button-wrapper">
           <button class="action-button filter jsFilter"><span>Filter</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></button>
           <div class="filter-menu">
             <label>Category</label>
-            <select>
+            <select id="category">
               <option>All Categories</option>
               <option>Furniture</option>                     <option>Decoration</option>
               <option>Kitchen</option>
@@ -159,7 +159,7 @@
               <button class="filter-button reset">
                 Reset
               </button>
-              <button class="filter-button apply">
+              <button class="filter-button apply" onclick="filterProducts()">
                 Apply
               </button>
             </div>
@@ -444,9 +444,11 @@
   </div>
 </div>
 
-<script>document.querySelector(".jsFilter").addEventListener("click", function () {
+<script>
+    document.querySelector(".jsFilter").addEventListener("click", function () {
   document.querySelector(".filter-menu").classList.toggle("active");
 });
+
 
 document.querySelector(".grid").addEventListener("click", function () {
   document.querySelector(".list").classList.remove("active");
@@ -589,8 +591,77 @@ modeSwitch.addEventListener('click', function () {                      document
   </footer>
 
 
+<script>// Get references to the HTML elements
+const categorySelect = document.getElementById('category');
+const statusSelect = document.getElementById('status');
+const products = document.querySelectorAll('.products-row');
 
+// Add event listeners to the select elements
+categorySelect.addEventListener('change', filterProducts);
+statusSelect.addEventListener('change', filterProducts);
 
+// Function to filter products based on category and status
+function filterProducts() {
+  const selectedCategory = categorySelect.value;
+  const selectedStatus = statusSelect.value;
+
+  // Loop through all products and hide/show based on the selected filters
+  products.forEach((product) => {
+    const productCategory = product.querySelector('.product-cell.category').textContent.split(':')[1].trim();
+    const productStatus = product.querySelector('.product-cell.status-cell .status').textContent.toLowerCase();
+
+    const categoryMatch = selectedCategory === 'All Categories' || selectedCategory === productCategory;
+    const statusMatch = selectedStatus === 'All Status' || selectedStatus.toLowerCase() === productStatus;
+
+    if (categoryMatch && statusMatch) {
+      product.style.display = 'block'; // Show the product
+    } else {
+      product.style.display = 'none'; // Hide the product
+    }
+  });
+}
+
+// Initial call to filterProducts to ensure the initial display is correct
+filterProducts();
+</script>
+<script>
+// Get references to the search input and the product rows
+const searchInput = document.getElementById("searchInput");
+const productRows = document.querySelectorAll(".products-row");
+
+// Add an event listener to the search input
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.toLowerCase();
+
+  // Loop through each product row and hide/show based on the search term
+  productRows.forEach((row) => {
+    const productTitle = row.querySelector(".product-cell.image span").textContent.toLowerCase();
+
+    if (productTitle.includes(searchTerm)) {
+      row.style.display = "block"; // Show the row
+    } else {
+      row.style.display = "none"; // Hide the row
+    }
+  });
+});
+
+// Add an event listener to the search input
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.toLowerCase();
+
+  // Loop through each product row and hide/show based on the search term
+  productRows.forEach((row) => {
+    const productTitle = row.querySelector(".product-cell.image span").textContent.toLowerCase();
+    const productStatus = row.querySelector(".product-cell.status-cell .status").textContent.toLowerCase();
+
+    if (productTitle.includes(searchTerm) || (searchTerm === "active" && productStatus === "active")) {
+      row.style.display = "block"; // Show the row
+    } else {
+      row.style.display = "none"; // Hide the row
+    }
+  });
+});
+</script>
 
   <!-- 
     - custom js link
